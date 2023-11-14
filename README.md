@@ -1,27 +1,24 @@
-# React + TypeScript + Vite
+# React + TypeScript + Chakra UI
+The challenge is to create a simple QR quote generator application that requires you to use an external library.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+From [Dev Challenges](https://devchallenges.io/)
 
-Currently, two official plugins are available:
+## User Stories
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ - Create a QR code generator app that matches the given design.
 
-## Expanding the ESLint configuration
+ - Use HTML to create the basic structure.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+ - Add inputs, buttons,.. according to the design.
 
-- Configure the top-level `parserOptions` property like this:
+ - Use JavaScript to add interactivity.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+ - Users should be able to enter a URL.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+ - User should be able to see a QR quote after selecting the QR code button.
+
+ - User should be able to download QR quote image by selecting download button.
+
+ - User should be able to copy Quote to the clipboard by selecting Share button.
+
+ - The page should be responsive on different screen sizes.
