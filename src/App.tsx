@@ -1,35 +1,21 @@
-import { VStack, Image, InputGroup, Input, InputRightElement, Button } from '@chakra-ui/react'
-import qrLogo from './assets/logo-qr-generator.svg'
+import { useState } from 'react'
+import QRCode from './QRCode'
+import Home from './Home'
+
+// URL to get a QR image
+const BASE_URL = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='
 
 function App() {
+  const [url, setUrl] = useState('')
+  const [showQR, setShowQR] = useState(false)
 
   return (
-    <VStack marginTop='15%'>
-      <Image src={qrLogo} marginBottom={5} />
-      <InputGroup width='40rem' boxSizing='border-box'>
-        <Input 
-          p='1.6rem' 
-          placeholder='Enter an url' 
-          variant='filled' 
-          borderColor='brand.blue' 
-          backgroundColor='brand.dark'
-          borderRadius={10} 
-          _focus={{ bg: 'brand.black' }}
-          _hover={{ bg: 'brand.black', cursor: 'pointer' }}
-        />
-        <InputRightElement w='5.5rem' marginY='0.4rem' marginRight='1.7rem'>
-          <Button 
-            fontSize='0.8rem' 
-            bg='brand.blue' 
-            transition='all ease 0.5s'
-            _hover={{ bg: 'cyan.400', color: 'brand.dark', fontSize: '0.9rem' }} 
-            size='md' px='4rem'
-          >
-            QR code
-          </Button>
-        </InputRightElement>
-      </InputGroup>
-    </VStack>
+    <>
+     {showQR 
+        ? <QRCode onGetQR={setShowQR} imageSrc={url} /> 
+        : <Home onGetQR={setShowQR} onSetUrl={(url) => setUrl(`${BASE_URL}${url}`)} />
+      }
+    </>
   )
 }
 
