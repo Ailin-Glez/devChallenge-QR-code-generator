@@ -32,7 +32,7 @@ The App has 2 components with the following functionalities:
 - Receives 3 props: isLoading (to show a spinner), the imageSrc (to show the QR image) and showQR property, that will be set to false if the user clicks on the logo (to return to the Home page)
 
 #### Custom hook
-The useQRImage custom hook was created to get the image url, using the following [API](api.qrserver.com/v1/create-qr-code/). 
+The useQRImage custom hook was created to get the image url, using the following [API](https://api.qrserver.com/v1/create-qr-code/). 
 The hook returns the image url as a string and also the isLoading property to show a spinner when the request hasn´t been completed yet
 
 #### Enhancements
