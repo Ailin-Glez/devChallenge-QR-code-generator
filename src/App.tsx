@@ -1,19 +1,18 @@
 import { useState } from 'react'
 import QRCode from './QRCode'
 import Home from './Home'
-
-// URL to get a QR image
-const BASE_URL = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='
+import useQRImage from './hooks/useQRImage'
 
 function App() {
-  const [url, setUrl] = useState('')
   const [showQR, setShowQR] = useState(false)
+  const [enteredUrl, setEnteredUrl] = useState('')
+  const { imageUrl, isLoading } = useQRImage(enteredUrl)
 
   return (
     <>
      {showQR 
-        ? <QRCode onGetQR={setShowQR} imageSrc={url} /> 
-        : <Home onGetQR={setShowQR} onSetUrl={(url) => setUrl(`${BASE_URL}${url}`)} />
+        ? <QRCode onGetQR={setShowQR} imageSrc={imageUrl} isLoading={isLoading} /> 
+        : <Home onGetQR={setShowQR} onSetEnteredUrl={(url) => setEnteredUrl(url)} />
       }
     </>
   )

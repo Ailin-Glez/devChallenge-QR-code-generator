@@ -1,10 +1,10 @@
-import { useRef } from 'react';
-import { VStack, Image, InputGroup, Input, InputRightElement, Button, useToast } from '@chakra-ui/react'
+import { FormEvent, useRef } from 'react';
+import { VStack, Image, InputGroup, Input, InputRightElement, Button, useToast, FormControl } from '@chakra-ui/react'
 import qrLogo from './assets/logo-qr-generator.svg'
 
 interface Props {
     onGetQR: (show: boolean) => void;
-    onSetUrl: (url: string) => void;
+    onSetEnteredUrl: (url: string) => void;
 }
 
 const stylesInput = {
@@ -27,11 +27,12 @@ const stylesButton = {
     px: '4rem'
 }
 
-function Home({ onGetQR, onSetUrl }: Props) {
+function Home({ onGetQR, onSetEnteredUrl: onSetUrl }: Props) {
     const urlRef = useRef<HTMLInputElement>(null)
     const toast = useToast()
 
-    const handleClick = () => {
+    const handleSubmit = (e: FormEvent) => {
+        e.preventDefault()
         if (urlRef.current) {
             if (urlRef.current.value !== '') {
                 onGetQR(true)
@@ -47,16 +48,18 @@ function Home({ onGetQR, onSetUrl }: Props) {
     }
 
     return (
-        <VStack marginTop='15%'>
+        <VStack marginTop='15%' >
           <Image src={qrLogo} marginBottom={5} />
-          <InputGroup width='40rem' boxSizing='border-box'>
-            <Input ref={urlRef} {...stylesInput} />
-            <InputRightElement w='5.5rem' marginY='0.4rem' marginRight='1.7rem'>
-              <Button { ...stylesButton } onClick={handleClick}>
-                QR code
-              </Button>
-            </InputRightElement>
-          </InputGroup>
+          <form onSubmit={handleSubmit}>
+            <InputGroup width='40rem'>
+                <Input ref={urlRef} {...stylesInput} />
+                <InputRightElement w='5.5rem' marginY='0.4rem' marginRight='1.7rem'>
+                <Button { ...stylesButton } onClick={handleSubmit}>
+                    QR code
+                </Button>
+                </InputRightElement>
+            </InputGroup>
+          </form>
         </VStack>
     );
 }
