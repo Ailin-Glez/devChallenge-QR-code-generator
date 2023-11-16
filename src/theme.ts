@@ -6,7 +6,7 @@ export const theme = extendTheme({
         global: {
             body: {
                 bg: '#111729',
-                color: '#F2F5F9',
+                color: '#f2f5f9',
                 fontFamily: ['Monserrat', 'Outfit'],
                 fontWeight: '400',
                 backgroundImage: bgImage,
