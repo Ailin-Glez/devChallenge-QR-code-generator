@@ -12,6 +12,7 @@ interface Props {
 
 const stylesButton = {
     bg: 'brand.blue',
+    color: '#f2f5f9',
     borderRadius: '10px', 
     size: 'md',
     width: '13rem',

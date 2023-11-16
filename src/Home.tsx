@@ -21,6 +21,7 @@ const stylesInput = {
 const stylesButton = {
     fontSize: '0.8rem',
     bg: 'brand.blue',
+    color: '#f2f5f9',
     transition: 'all ease 0.5s',
     _hover: { bg: 'cyan.400', color: 'brand.dark', fontSize: '0.9rem' },
     size: 'md', 
