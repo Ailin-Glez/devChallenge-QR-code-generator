@@ -14,7 +14,7 @@ const stylesInput = {
     borderColor: 'brand.blue', 
     backgroundColor: 'brand.dark',
     borderRadius: '0.8rem',
-    _focus: { bg: 'brand.black' },
+    _focus: { bg: 'brand.black', color: '#f2f5f9' },
     _hover: { bg: 'brand.black', cursor: 'pointer' }
 }
 
