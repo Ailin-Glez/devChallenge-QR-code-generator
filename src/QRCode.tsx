@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Image, Button, HStack, VStack, Box, Spinner, useToast, Flex } from '@chakra-ui/react'
 import { DownloadIcon, LinkIcon } from '@chakra-ui/icons'
 import FileSaver from 'file-saver'

@@ -1,5 +1,5 @@
 import { FormEvent, useRef } from 'react';
-import { VStack, Image, InputGroup, Input, InputRightElement, Button, useToast, FormControl } from '@chakra-ui/react'
+import { VStack, Image, InputGroup, Input, InputRightElement, Button, useToast } from '@chakra-ui/react'
 import qrLogo from './assets/logo-qr-generator.svg'
 
 interface Props {
