@@ -3,6 +3,8 @@ The challenge is to create a simple QR quote generator application that requires
 
 From [Dev Challenges](https://devchallenges.io/)
 
+Check [Live Demo](https://qr-code-generator-ailin-glez.netlify.app/)
+
 ### User Stories
 
  - Create a QR code generator app that matches the given design.
